@@ -1,6 +1,6 @@
 # Middleman ClearSight Edition
 
-A nice default project template for Middleman, the fantastic static site building tool.
+A nice default project template for [Middleman](http://middlemanapp.com), the fantastic static site building tool.
 
 ## Features
 
