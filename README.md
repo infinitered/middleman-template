@@ -18,7 +18,7 @@ Sets you up with the following, straight out of the box:
 
 Clone this repo into your .middleman directory as clearsight
 
-    git clone git@bitbucket.org/clearsightstudio/middleman-template.git ~/.middleman/clearsight
+    git clone git@bitbucket.org:clearsightstudio/middleman-template.git ~/.middleman/clearsight
 
 Now you can simply init new projects with the ClearSight template:
 
