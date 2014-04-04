@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.1.1"
 
-gem "middleman", "~> 3.1.6"
+gem "middleman", "~> 3.2"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", platforms: [:mswin, :mingw]
@@ -13,6 +13,8 @@ end
 
 # Slim templating
 gem "slim", "~> 2.0.0"
+
+gem "sass", ">= 3.3.0"
 
 # Bourbon + Neat
 gem "middleman-neat", "~> 0.0.4"
