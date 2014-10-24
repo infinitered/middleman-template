@@ -16,7 +16,10 @@ configure :build do
   activate :minify_javascript
   activate :directory_indexes # Pretty URLs
   activate :asset_hash # Enable cache buster
-  activate :image_optim
+  activate :imageoptim do |options|
+    options.pngout_options = false
+    options.advpng_options = false
+  end
   activate :gzip
 
   # Change to your Google Analytics key (e.g. UA-XXXXX-Y)
@@ -35,5 +38,5 @@ activate :deploy do |deploy|
   deploy.user   = "clearsight"
   deploy.path   = "~/webapps/appname"
 
-  deploy.build_before = true
+  deploy.build_before = false # Use rake task
 end
