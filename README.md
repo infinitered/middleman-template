@@ -2,19 +2,38 @@
 
 A nice default project template for [Middleman](http://middlemanapp.com), the fantastic static site building tool.
 
-## Features
+## Dependencies
 
-Sets you up with the following, straight out of the box:
-
-- [Slim](http://slim-lang.com/) templating
-- [Sass](http://sass-lang.com/) with [Compass](http://compass-style.org) or [Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)
+- [Middleman](http://middlemanapp.com)
+- [Slim](http://slim-lang.com/) templates
+- [Sass](http://sass-lang.com/) with [Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)
 - [CoffeeScript](http://coffeescript.org/) with [jQuery](http://jquery.com/)
-- Simple Google Analytics support
 - [Livereload](https://github.com/middleman/middleman-livereload)
-- CSS & Javascript minification, image optimisation and gzipping on build
-- …and probably some other stuff.
+- [PNGcrush](http://pmt.sourceforge.net/pngcrush/)
+- [OptiPNG]()
+- [JPEGoptim]()
+
+## Setup
+
+Quick setup:
+
+```
+./bin/setup
+bundle exec middleman
+```
+
+Manual setup:
+
+```
+brew install pngcrush optipng jpegoptim
+bundle
+rake build:source
+bundle exec middleman
+```
 
 ## Usage
+
+**Template usage below...replace with your own usage**
 
 Clone this repo into your .middleman directory as clearsight
 
