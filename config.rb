@@ -16,7 +16,10 @@ configure :build do
   activate :minify_javascript
   activate :directory_indexes # Pretty URLs
   activate :asset_hash # Enable cache buster
-  activate :image_optim
+  activate :imageoptim do |options|
+    options.pngout_options = false
+    options.advpng_options = false
+  end
   activate :gzip
 
   # Change to your Google Analytics key (e.g. UA-XXXXX-Y)
@@ -30,10 +33,17 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
-  deploy.host   = "appname.clearsight.webfactional.com"
+  deploy.build_before = false # Use rake task
+  
   deploy.clean  = true
-  deploy.user   = "clearsight"
-  deploy.path   = "~/webapps/appname"
-
-  deploy.build_before = true
+  if ENV['app'] == "staging"
+    deploy.host   = "some_staging.clearsight.webfactional.com"
+    deploy.user   = "clearsight"
+    deploy.path   = "~/webapps/some_staging"
+  else
+    abort "Not set up.".red
+    deploy.host   = "something.webfactional.com"
+    deploy.user   = "something"
+    deploy.path   = "~/webapps/something"
+  end
 end
