@@ -4,6 +4,7 @@ activate :automatic_image_sizes
 set :css_dir, "assets/stylesheets"
 set :js_dir, "assets/javascripts"
 set :images_dir, "assets/images"
+set :fonts_dir, "assets/fonts"
 
 configure :development do
   Slim::Engine.default_options[:pretty] = true
@@ -21,6 +22,10 @@ configure :build do
   # Change to your Google Analytics key (e.g. UA-XXXXX-Y)
   # To disable GA, leave unset or set to nil
   set :ga_key, nil
+
+  after_build do
+    `chmod -R 755 ./build/assets`
+  end
 end
 
 activate :deploy do |deploy|

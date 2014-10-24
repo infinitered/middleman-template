@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import "vendor/vendor";
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import "bitters/bitters";
-@import "clearsight/clearsight";
+@import "vendor/**/*";
+@import "bourbon";
+@import "neat";
+@import "base/**/*";
+@import "app_name/**/*";
