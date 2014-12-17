@@ -1,3 +1,5 @@
+require_relative './helpers/colorizer.rb'
+
 activate :automatic_image_sizes
 
 # Assets Directory Setup
@@ -34,7 +36,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.build_before = false # Use rake task
-  
+
   deploy.clean  = true
   if ENV['app'] == "staging"
     deploy.host   = "some_staging.clearsight.webfactional.com"

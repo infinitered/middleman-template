@@ -6,6 +6,8 @@ RSpec::Core::RakeTask.new(:spec)
 task default: :spec
 
 namespace :build do
+
+  desc "Build app from source"
   task :source do
     puts "Building app from source".green
     system "bundle exec middleman build"
@@ -20,6 +22,7 @@ namespace :build do
   # end
 end
 
+desc "Build app from source"
 task :build do
   Rake::Task["build:source"].invoke
 end
@@ -31,10 +34,12 @@ namespace :deploy do
     system "app=#{env} bundle exec middleman deploy"
   end
 
+  desc "Deploy to staging"
   task :staging do
     deploy :staging
   end
 
+  desc "Deploy to production"
   task :production do
     deploy :production
   end
@@ -42,6 +47,7 @@ namespace :deploy do
   task default: :staging
 end
 
+desc "Deploy to staging"
 task :deploy do
   Rake::Task["deploy:staging"].invoke
 end

@@ -1,26 +1,30 @@
 #!/usr/bin/ruby
 require_relative '../helpers/colorizer.rb'
 
-puts "Installing binary dependencies...".cyan
+puts 'Installing binary dependencies...'.cyan
 system 'brew install pngcrush optipng'
-puts "Done.".green
+puts 'Done.'.green
 
-puts "Installing ruby dependencies...".cyan
+puts 'Installing ruby dependencies...'.cyan
 system 'bundle'
-puts "Done.".green
+puts 'Done.'.green
 
-puts "Doing initial Middleman build...".cyan
+puts 'Updating Bourbon, Neat, and Bitters'.cyan
+system 'cd ./source/assets/stylesheets/ && bourbon update && neat update && bitters update'
+puts 'Done.'.green
+
+puts 'Doing initial Middleman build...'.cyan
 system 'bundle exec rake build:source'
-puts "Done.".green
+puts 'Done.'.green
 
-msg = "Installation complete. Available commands:"
-puts ("=" * msg.length).cyan
+msg = 'Installation complete. Available commands:'
+puts ('=' * msg.length).cyan
 puts msg.green
-puts " middleman".magenta + " (start server)".white
-puts " rake build:source".magenta
-puts " rake build:data".magenta
-puts " rake deploy:staging".magenta
-puts " rake deploy:production".magenta
-puts ""
-puts "Look in the Rakefile for more info."
+puts ' middleman'.magenta + ' (start server)'.white
+puts ' rake build:source'.magenta
+puts ' rake build:data'.magenta
+puts ' rake deploy:staging'.magenta
+puts ' rake deploy:production'.magenta
+puts
+puts 'Look in the Rakefile for more info.'
 
