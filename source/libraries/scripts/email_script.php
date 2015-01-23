@@ -6,8 +6,8 @@
   $to_name        = "To Name";
 
   $smtp_host      = 'smtp.mandrillapp.com';
-  $smtp_secure    = 'ssl';
-  $smtp_port      = 465;
+  $smtp_secure    = 'tls';
+  $smtp_port      = 587;
   $smtp_auth      = true;
   $smtp_username  = 'user@whatever.com';
   $smtp_pass      = "******API-KEY*******";
