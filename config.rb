@@ -1,7 +1,5 @@
 require_relative './helpers/colorizer.rb'
 
-activate :automatic_image_sizes
-
 # Assets Directory Setup
 set :css_dir, "assets/stylesheets"
 set :js_dir, "assets/javascripts"
