@@ -1,4 +1,17 @@
 <?
+  /*
+    -DOCUMENTATION-
+
+    --FORM--
+    Submit form to /libraries/scripts/email_script.php using method POST
+    If you want to use it with ajax, add this input `<input type="hidden" name="ajax" />`. This will return either 200 (success) or 400 (error).
+    If you want to include a honeypot, add this input `<input type="hidden" name="honeypot" />`. This will prevent the form from sending if the field has a value that's not blank.
+
+    --SCRIPT--
+    Tweak the settings below. The script must use SMTP. Mandrill host, port, and security type is already prefilled.
+    For more mailer options, re-enable the commented out `$mail->` options located towards the end of the script. You can set reply-to, non-html body, and handle attachments.
+  */
+
   // SETTINGS
   $from_email     = "from@email.com";
   $from_name      = "From Name";
@@ -82,24 +95,22 @@
 
 
   // SEND
-  if ($debugging) {
+  if ($debugging) :
     echo (!$mail->send()) ? "Mailer Error: {$mail->ErrorInfo}" : "Message Sent!";
-  } else {
+  else :
 
-    if (!$mail->send()) {
-      $error_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?error=" . urlencode($error_text);
-      if (isset($_POST['ajax'])) {
-        header("HTTP/1.1 400 Bad Request", true, 400);
-      } else {
-        header("Location: $error_url");
-      }
-    } else {
-      $success_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?success=" . urlencode($success_text);
-      if (isset($_POST['ajax'])) {
-        header("HTTP/1.1 200 OK", true, 200);
-      } else {
-        header("Location: $success_url");
-      }
-    }
-  }
+    $error_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?error=" . urlencode($error_text);
+    $success_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?success=" . urlencode($success_text);
+
+    if (empty($_POST['honeypot'])) :
+      if (!$mail->send()) :
+        isset($_POST['ajax']) ? header("HTTP/1.1 400 Bad Request", true, 400) :  header("Location: $error_url") ;
+      else :
+        isset($_POST['ajax']) ? header("HTTP/1.1 200 OK", true, 200) : header("Location: $success_url") ;
+      endif;
+    else :
+      isset($_POST['ajax']) ? header("HTTP/1.1 400 Bad Request", true, 400) :  header("Location: $error_url") ;
+    endif;
+
+  endif;
 ?>
