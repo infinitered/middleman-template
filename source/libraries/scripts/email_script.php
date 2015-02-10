@@ -102,7 +102,7 @@
     $error_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?error=" . urlencode($error_text);
     $success_url = preg_replace('/\?.*/', '', $_SERVER["HTTP_REFERER"]) . "?success=" . urlencode($success_text);
 
-    if (empty($_POST['honeypot'])) :
+    if (empty($_POST['honeypot']) && count($_POST) > 0) :
       if (!$mail->send()) :
         isset($_POST['ajax']) ? header("HTTP/1.1 400 Bad Request", true, 400) :  header("Location: $error_url") ;
       else :
