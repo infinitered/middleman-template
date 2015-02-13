@@ -36,14 +36,18 @@ activate :deploy do |deploy|
   deploy.build_before = false # Use rake task
 
   deploy.clean  = true
+
   if ENV['app'] == "staging"
     deploy.host   = "some_staging.clearsight.webfactional.com"
     deploy.user   = "clearsight"
     deploy.path   = "~/webapps/some_staging"
   else
-    abort "Not set up.".red
     deploy.host   = "something.webfactional.com"
     deploy.user   = "something"
     deploy.path   = "~/webapps/something"
+  end
+
+  if deploy.host == "something.webfactional.com"
+    puts "Please set up deployment credentials.".red
   end
 end
