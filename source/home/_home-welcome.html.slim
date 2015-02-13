@@ -1,0 +1,12 @@
+section#home-welcome
+  style @charset "UTF-8";body{background:url('//raw.githubusercontent.com/middleman/middleman/v3-stable/middleman-core/lib/middleman-core/templates/default/source/images/background.png') #d4d4d4;text-align:center;font-family:sans-serif}h1{color:rgba(0,0,0,.3);font-weight:700;font-size:32px;letter-spacing:-1px;text-transform:uppercase;text-shadow:0 1px 0 rgba(255,255,255,.5);background:url('//raw.githubusercontent.com/middleman/middleman/v3-stable/middleman-core/lib/middleman-core/templates/default/source/images/middleman.png') center 100px no-repeat;padding:350px 0 10px;margin:0}.doc{font-size:18px;margin:0;padding:0}.doc:after,.doc:before{opacity:.2;padding:6px;font-style:normal;position:relative;content:"• • • • •"}.doc li{list-style:none}.doc li a{color:rgba(0,0,0,.3)}.doc li a:hover{color:#666}.welcome{-webkit-animation-name:welcome;-webkit-animation-duration:.9s}@-webkit-keyframes welcome{50%,from{-webkit-transform:scale(0);opacity:0}82.5%{-webkit-transform:scale(1.03);-webkit-animation-timing-function:ease-out;opacity:1}to{-webkit-transform:scale(1)}}
+  .welcome
+    h1 ClearSight Edition
+    ul.doc
+      li = link_to "Middleman Docs", "http://middlemanapp.com/"
+      li = link_to "Slim Docs", "http://rdoc.info/gems/slim/frames"
+      li = link_to "Sass Docs", "http://sass-lang.com/documentation/file.SASS_REFERENCE.html"
+      li = link_to "CoffeeScript Docs", "http://coffeescript.org/"
+      li = link_to "Bourbon Docs", "http://bourbon.io/"
+      li = link_to "Neat Docs", "http://neat.bourbon.io/"
+      li = link_to "Bitters Docs", "http://bitters.bourbon.io/"

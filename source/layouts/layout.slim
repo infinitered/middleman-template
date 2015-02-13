@@ -3,12 +3,10 @@ html
   head
     = partial "layouts/head"
   body class="#{page_classes}"
-    = partial "layouts/header"
-    main
-      = yield
-    = partial "layouts/footer"
+
+    header = partial "layouts/header"
+    main   = yield
+    footer = partial "layouts/footer"
     = partial "layouts/scripts"
 
-    / Grid overlay for development purposes
-    / = partial "layouts/grid-overlay"
-
+    / = partial "layouts/grid-overlay" # grid overlay for dev purposes

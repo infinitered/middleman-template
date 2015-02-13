@@ -1,14 +1,37 @@
-@import "neat-helpers"; // or "../neat/neat-helpers" when not in Rails
+@import '../_helpers/neat/neat-helpers';
 
-// Neat Overrides
-// $column: 90px;
-// $gutter: 30px;
-// $grid-columns: 12;
-// $max-width: em(1088);
+// Settings
+$grid-columns     : 12;
+$gutter           : 24px;
+$container        : 1152px;
+$container_gutter : 15px;
 
-// Neat Breakpoints
-$medium-screen: em(640);
-$large-screen: em(860);
+// Grid
+$max-width    : $container + $container_gutter * 2;
+$column       : ($max-width - ($gutter * ($grid-columns - 1)))/12;
 
-$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
-$large-screen-up: new-breakpoint(min-width $large-screen 8);
+// main
+$desktop : new-breakpoint(min-width 1024px);
+$tablet  : new-breakpoint(min-width 768px max-width 1023px);
+$mobile  : new-breakpoint(max-width 767px);
+
+// secondary
+$desktop-large : new-breakpoint(min-width 1200px);
+$desktop-small : new-breakpoint(min-width 1024px max-width 1200px);
+
+$tablet-landscape : new-breakpoint(min-width 960px max-width 1023px);
+$tablet-portrait  : new-breakpoint(min-width 768px max-width 959px);
+
+$mobile-landscape : new-breakpoint(min-width 480px max-width 767px);
+$mobile-portrait  : new-breakpoint(max-width 479px);
+
+
+// combined
+$desktop-and-tablet : new-breakpoint(min-width 768px);
+$tablet-and-mobile  : new-breakpoint(max-width 1023px);
+
+.container {
+  @include outer-container;
+  border-right : $container_gutter solid transparent !important;
+  border-left  : $container_gutter solid transparent !important;
+}
