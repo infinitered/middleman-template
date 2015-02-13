@@ -36,7 +36,7 @@ bundle exec middleman
 
 **Template usage below...replace with your own usage**
 
-Clone this repo into your .middleman directory as clearsight
+Clone this repo into your `~/.middleman` directory as clearsight
 
     git clone git@github.com:clearsightstudio/middleman-template.git ~/.middleman/clearsight
 
