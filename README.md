@@ -18,7 +18,7 @@ A nice default project template for [Middleman](http://middlemanapp.com), the fa
 Quick setup:
 
 ```
-./bin/setup
+rake setup
 bundle exec middleman
 ```
 
@@ -28,6 +28,7 @@ Manual setup:
 brew install pngcrush optipng jpegoptim
 bundle
 rake build:source
+rake setup:update
 bundle exec middleman
 ```
 
