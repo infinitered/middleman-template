@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rake'
-gem 'middleman', '~> 3.3'
+gem 'middleman', '3.3.9' # Bug when starting server in 3.3.10
 
 # Bourbon + Neat
 gem 'slim', '~> 2.1'
