@@ -2,6 +2,8 @@
 
 A nice default project template for [Middleman](http://middlemanapp.com), the fantastic static site building tool.
 
+Middleman-Template is maintained by ![Infinite Red](http://infinite.red), a web and mobile development company based in Portland, OR and San Francisco, CA.
+
 ## Dependencies
 
 - [Middleman](http://middlemanapp.com)
