@@ -47,3 +47,7 @@ Now you can simply init new projects with the ClearSight template:
     middleman init -T=clearsight my-project
 
 Just don't forget to update `~/.middleman/clearsight` every now and then.
+
+## Premium Support
+
+[Middleman Template](https://github.com/infinitered/middleman-template), as an open source project, is free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Middleman and Middleman Template support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
